@@ -12,15 +12,18 @@ function score(game) {
     function strikeBonus(curr) {
         var bonus = 0;
         if (strikeTracker.length === 1) {
-            if (curr[0] !== 10) {
+            if (!isStrike(curr)) {
                 strikeTracker.shift();
             }
             bonus += curr[0] + curr[1];
         } else if (strikeTracker.length === 2) {
             bonus += 2 * curr[0] + curr[1];
             strikeTracker.shift();
-            strikeTracker.shift();
+            if (!isStrike(curr)) {
+                strikeTracker.shift();
+            }
         }
+        console.log(bonus, curr)
         return bonus;
     }
 
