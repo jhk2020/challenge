@@ -1,4 +1,4 @@
-function score(game) {
+module.exports = function score(game) {
     var strikeTracker = [];
     var spareTracker = [];
 
