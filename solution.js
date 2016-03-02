@@ -23,7 +23,6 @@ function score(game) {
                 strikeTracker.shift();
             }
         }
-        console.log(bonus, curr)
         return bonus;
     }
 
