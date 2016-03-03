@@ -30,14 +30,18 @@ describe('Score', function() {
     expect(actual).to.equal(44);
   });
   it('computes score for perfect game', function() {
-    var mock = new MockBrowser();
-    var window = mock.getWindow();
-    var prompt = sinon.stub(window, 'prompt');
-    prompt.onCall(0).returns(10);
-    prompt.onCall(1).returns(10);
-    
+    if (typeof window === 'undefined') {
+      var mock = new MockBrowser();
+      var window = mock.getWindow();
+      var prompt = sinon.stub(window, 'prompt');
+      prompt.onCall(0).returns(10);
+      prompt.onCall(1).returns(10);
+    } else {
+      var prompt = window.prompt;
+    }
+
     var frames = [[10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0]];
     var actual = score(frames, prompt);
     expect(actual).to.equal(300);
-  })
+  });
 })
