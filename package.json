@@ -18,6 +18,8 @@
   "homepage": "https://github.com/jhk2020/challenge#readme",
   "dependencies": {
     "chai": "^3.5.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "mock-browser": "^0.92.10",
+    "sinon": "^1.17.3"
   }
 }
