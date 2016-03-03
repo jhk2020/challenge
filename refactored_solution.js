@@ -47,6 +47,7 @@ function spareBonus(frameIndex, nextFrame, bonusRound) {
 }
 
 module.exports = function score(game, prompt) {
+  var prompt = prompt || window.prompt; 
   var finalScore = 0;
   var bonusRound = [];
   var eighthFrameIsStrike = false;
