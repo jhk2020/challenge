@@ -35,12 +35,9 @@ describe('Score', function() {
     var prompt = sinon.stub(window, 'prompt');
     prompt.onCall(0).returns(10);
     prompt.onCall(1).returns(10);
+    
     var frames = [[10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0]];
     var actual = score(frames, prompt);
     expect(actual).to.equal(300);
-
-    after(function() {
-      prompt.restore();
-    })
   })
 })
